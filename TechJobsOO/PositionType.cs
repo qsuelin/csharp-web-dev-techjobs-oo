@@ -34,7 +34,7 @@ namespace TechJobsOO
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Value);
+            return HashCode.Combine(Id);
         }
     }
 }
