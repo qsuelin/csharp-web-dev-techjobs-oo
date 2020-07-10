@@ -8,16 +8,25 @@ namespace TechJobsOO
         private string value;
 
         // TODO: Change the fields to auto-implemented properties.
+        public int Id
+        {
+            get;set;
+        }
+
+        public string Value
+        {
+            get; set;
+        }
 
         public CoreCompetency()
         {
-            id = nextId;
+            Id = nextId;
             nextId++;
         }
 
         public CoreCompetency(string v) : this()
         {
-            value = v;
+            Value = v;
         }
 
         public override bool Equals(object obj)
@@ -36,5 +45,5 @@ namespace TechJobsOO
             return value;
         }
     }
-    }
+    
 }
