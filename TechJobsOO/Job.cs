@@ -52,9 +52,13 @@ namespace TechJobsOO
             {
                 string emptyMsg = "Data not available";
 
-                return $"/nID: {Id}/nName: {(Name != null ? Name : emptyMsg)}/nEmployer: {(EmployerName.Value != null ? EmployerName.Value : emptyMsg)}/n" +
-                    $"Location: {(EmployerLocation.Value != null ? EmployerLocation.Value : emptyMsg)}/nPosition Type: {(JobType.Value != null ? JobType.Value : emptyMsg)}/n" +
-                    $"Core Compentency: {(JobCoreCompetency.Value != null ? JobCoreCompetency.Value : emptyMsg)}/n";
+                //return $"\nID: {Id}\nName: {(Name != null ? Name : emptyMsg)}\nEmployer: {(EmployerName.Value != null ? EmployerName.Value : emptyMsg)}\n" +
+                //    $"Location: {(EmployerLocation.Value != null ? EmployerLocation.Value : emptyMsg)}\nPosition Type: {(JobType.Value != null ? JobType.Value : emptyMsg)}\n" +
+                //    $"Core Compentency: {(JobCoreCompetency.Value != null ? JobCoreCompetency.Value : emptyMsg)}\n";
+
+                return $"\nID: {Id}\nName: {(Name != "" ? Name : emptyMsg)}\nEmployer: {(EmployerName.Value != "" ? EmployerName.Value : emptyMsg)}\n" +
+                    $"Location: {(EmployerLocation.Value != "" ? EmployerLocation.Value : emptyMsg)}\nPosition Type: {(JobType.Value != "" ? JobType.Value : emptyMsg)}\n" +
+                    $"Core Compentency: {(JobCoreCompetency.Value != "" ? JobCoreCompetency.Value : emptyMsg)}\n";
 
             }
         }

@@ -52,8 +52,8 @@ namespace TechJobsTests
             //Regex rgx = new Regex(@"^\n(.*)$\n");
             //Assert.IsTrue(rgx.IsMatch(testJob.ToString()));
 
-            Assert.IsTrue(testJob.ToString().StartsWith("/n"));
-            Assert.IsTrue(testJob.ToString().EndsWith("/n"));
+            Assert.IsTrue(testJob.ToString().StartsWith("\n"));
+            Assert.IsTrue(testJob.ToString().EndsWith("\n"));
         }
 
         [TestMethod]
@@ -68,9 +68,9 @@ namespace TechJobsTests
         [TestMethod]
         public void TestJobsToStringEmptyField()
         {
-            Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency());
+            Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
             string actual = job2.ToString();
-            //Assert.IsTrue(actual.EndsWith("Data not available/n"));
+            Assert.IsTrue(actual.EndsWith("Data not available\n"));
             Assert.IsTrue(actual.Contains("Core Compentency: Data not available"));
         }
 
