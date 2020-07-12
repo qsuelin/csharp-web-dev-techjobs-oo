@@ -21,7 +21,7 @@ namespace TechJobsOO
             nextId++;
         }
 
-        public Job(string name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency): this()
+        public Job(string name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) : this()
         {
             Name = name;
             EmployerName = employer;
@@ -42,7 +42,22 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
+        public override string ToString()
+        {
+            if (Name == null && EmployerName==null && EmployerLocation==null && JobType==null && JobCoreCompetency==null )
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
+            else
+            {
+                string emptyMsg = "Data not available";
 
+                return $"/nID: {Id}/nName: {(Name != null ? Name : emptyMsg)}/nEmployer: {(EmployerName.Value != null ? EmployerName.Value : emptyMsg)}/n" +
+                    $"Location: {(EmployerLocation.Value != null ? EmployerLocation.Value : emptyMsg)}/nPosition Type: {(JobType.Value != null ? JobType.Value : emptyMsg)}/n" +
+                    $"Core Compentency: {(JobCoreCompetency.Value != null ? JobCoreCompetency.Value : emptyMsg)}/n";
+
+            }
+        }
 
     }
 }
